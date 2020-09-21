@@ -3,7 +3,7 @@ version: '2'
 services:
   web:
     build:
-      context: .
+      context: nginx
     volumes:
      - /media/data/docker-persist/filerun/html:/usr/share/nginx/html
     ports:
