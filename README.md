@@ -12,9 +12,17 @@ Features
 
 Usage
 ----
+
+Use docker volumes to map `/user-files` to the file root folder, `/usr/share/nginx/html` to nginx root, `/var/lib/mysql` to maria database.
+
 ```
 $ docker-compose up -d
 ```
+
+The default FileRun credentials are as follows:
+
+* Username: superuser
+* Password: superuser
 
 Improvement
 ----

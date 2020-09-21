@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  web:
+  nginx:
     build:
       context: nginx
     volumes:
