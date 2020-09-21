@@ -2,7 +2,7 @@
 
 [FileRun](https://github.com/filerun) is a self-hosted Google Drive/Photos/Music alternative. It's a full-features web based file manager with exceptionally well-polished user interface.
 
-I was looking for a docker image to run on my ODroid HC2 NAS for the choice of web file manager. FileRun's [official documentation](https://docs.filerun.com/docker-arm) requires downloading a 800M+ [PHP image](https://hub.docker.com/r/afian/filerun) based on Apache (what?) and a 300M+ MariaDB image. I don't want to spend 1GB space on just a simple file manager. So I decide to build my own.
+I was looking for a docker image to run on my ODroid HC2 NAS for the choice of web file manager. FileRun's [official documentation](https://docs.filerun.com/docker-arm) requires downloading a 800M+ [PHP image](https://hub.docker.com/r/afian/filerun) based on Apache (what?) and a 300M+ MariaDB image. I don't want to spend 1GB space on just a simple file manager ([filebrowser](https://hub.docker.com/r/filebrowser/filebrowser) is only 30 MB. So I decide to build my own stack.
 
 Features
 -----
@@ -15,6 +15,10 @@ Usage
 ```
 $ docker-compose up -d
 ```
+
+Improvement
+----
+I ended up creating two new docker images, one running nginx and another running php-fpm, due to the way PHP on nginx works (as opposite to Apache modules). For the custom php-fpm, I have followed the offical docker build and rewrote significantly on all the steps. This turns out to be much cleaner. For the nginx image, the increased size is mostly because of a pre-downloaded filerun zip file, that would be extracted to the html root the first time the container is created. I also added a modified version of init sql script to load when the mariadb loads (original copy is from https://github.com/filerun/docker-arm32v7).
 
 Size
 ----
