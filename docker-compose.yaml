@@ -2,8 +2,7 @@ version: '2'
 
 services:
   nginx:
-    build:
-      context: nginx
+    image: henryouly/filerun-alpine:arm
     volumes:
      - /media/data/docker-persist/filerun/html:/usr/share/nginx/html
     ports:
@@ -29,8 +28,7 @@ services:
       - ./filerun.setup.sql:/docker-entrypoint-initdb.d/filerun.setup.sql:ro
 
   php:
-    build:
-      context: php-fpm
+    image: henryouly/filerun-alpine-php-fpm:arm
     volumes:
      - /media/data/docker-persist/filerun/html:/usr/share/nginx/html
      - /media/data:/user-files

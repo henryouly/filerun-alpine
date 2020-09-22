@@ -31,10 +31,10 @@ I ended up creating two new docker images, one running nginx and another running
 Size
 ----
 My goal is to keep the size down. The final size is:
-* nginx 29 MB
-* php-fpm 79.6 MB
+* [henryouly/filerun-alpine](https://hub.docker.com/r/henryouly/filerun-alpine) 28.9 MB (20.42 MB compressed)
+* [henryouly/filerun-alpine-php-fpm](https://hub.docker.com/r/henryouly/filerun-alpine-php-fpm) 64.3 MB (28.28 MB compressed)
 
-Total size is around 110 MB.
+Total on-disk size is below 100 MB.
 
 I also used the mariadb image from https://github.com/yobasystems/alpine-mariadb, which is 188 MB at this point. I looked at https://github.com/jbergstroem/mariadb-alpine but didn't end up using it due to the arch mismatch. Maybe will take a look at building a arm32v7 version some day.
 
