@@ -31,8 +31,8 @@ I ended up creating two new docker images, one running nginx and another running
 Size
 ----
 My goal is to keep the size down. The final size is:
-* [henryouly/filerun-alpine](https://hub.docker.com/r/henryouly/filerun-alpine) 28.9 MB (20.42 MB compressed)
-* [henryouly/filerun-alpine-php-fpm](https://hub.docker.com/r/henryouly/filerun-alpine-php-fpm) 64.3 MB (28.28 MB compressed)
+* henryouly/filerun-alpine ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/henryouly/filerun-alpine) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/henryouly/filerun-alpine)
+* henryouly/filerun-alpine-php-fpm ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/henryouly/filerun-alpine-php-fpm) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/henryouly/filerun-alpine-php-fpm)
 
 Total on-disk size is below 100 MB.
 
