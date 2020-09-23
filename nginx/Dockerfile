@@ -11,7 +11,12 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/henryouly/filerun-alpine" \
       org.label-schema.schema-version="1.0"
 
-# add PHP, extensions and third-party software
+ENV FR_DB_HOST db
+ENV FR_DB_PORT 3306
+ENV FR_DB_NAME filerun
+ENV FR_DB_USER filerun
+ENV FR_DB_PASS filerun
+
 RUN apk add --no-cache curl unzip
 
 WORKDIR /srv
@@ -21,9 +26,3 @@ RUN curl -sSL -o /srv/filerun.zip https://filerun.com/download-latest-php73
 COPY autoconfig.php /srv/
 COPY entrypoint.sh /docker-entrypoint.d/
 COPY filerun.conf /etc/nginx/conf.d/default.conf
-
-ENV FR_DB_HOST db
-ENV FR_DB_PORT 3306
-ENV FR_DB_NAME filerun
-ENV FR_DB_USER filerun
-ENV FR_DB_PASS filerun
