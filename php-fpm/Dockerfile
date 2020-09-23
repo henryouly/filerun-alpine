@@ -32,3 +32,4 @@ RUN apk add --no-cache --virtual .build-deps curl \
 # set recommended PHP.ini settings
 # see http://docs.filerun.com/php_configuration
 COPY filerun-optimization.ini /usr/local/etc/php/conf.d/
+COPY www.conf /usr/local/etc/php-fpm.d/
