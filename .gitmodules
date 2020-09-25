@@ -1,0 +1,6 @@
+[submodule "mariadb/mariadb-alpine"]
+	path = mariadb/mariadb-alpine
+	url = https://github.com/jbergstroem/mariadb-alpine
+[submodule "mariadb-alpine"]
+	path = mariadb-alpine
+	url = https://github.com/jbergstroem/mariadb-alpine

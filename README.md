@@ -36,10 +36,9 @@ My goal is to keep the size down. The final size is:
 
 Total on-disk size is below 100 MB.
 
-I also used the mariadb image from https://github.com/yobasystems/alpine-mariadb, which is 188 MB at this point. I looked at https://github.com/jbergstroem/mariadb-alpine but didn't end up using it due to the arch mismatch. Maybe will take a look at building a arm32v7 version some day.
+I also used https://github.com/jbergstroem/mariadb-alpine in the `docker-compose.yaml` file due to the tiny footprint and fast startup speed.
 
-Thanks to these projects. My work has been improved based on their work:
+Thanks to these projects. My project has been greatly benefited based on their work:
 * https://github.com/filerun/docker-arm32v7
-* https://github.com/yobasystems/alpine-mariadb
 * https://github.com/TrafeX/docker-php-nginx
 * https://github.com/jbergstroem/mariadb-alpine

@@ -2,7 +2,8 @@ version: '2'
 
 services:
   nginx:
-    image: henryouly/filerun-alpine:arm
+    build:
+      context: nginx
     volumes:
      - /media/data/docker-persist/filerun/html:/usr/share/nginx/html
     ports:
@@ -15,7 +16,8 @@ services:
      - php
 
   db:
-    image: yobasystems/alpine-mariadb
+    build:
+      context: mariadb-alpine
     environment:
       FR_DB_HOST: db
       FR_DB_PORT: 3306
@@ -23,12 +25,14 @@ services:
       MYSQL_USER: filerun
       MYSQL_PASSWORD: filerun
       MYSQL_ROOT_PASSWORD: filerun
+      SKIP_INNODB: 1
     volumes:
       - /media/data/docker-persist/filerun/mariadb:/var/lib/mysql
       - ./filerun.setup.sql:/docker-entrypoint-initdb.d/filerun.setup.sql:ro
 
   php:
-    image: henryouly/filerun-alpine-php-fpm:arm
+    build:
+      context: php-fpm
     volumes:
      - /media/data/docker-persist/filerun/html:/usr/share/nginx/html
      - /media/data:/user-files
