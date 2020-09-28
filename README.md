@@ -34,8 +34,8 @@ My goal is to keep the size down. The final size is:
 
 | Name | Size |
 |------|------|
-| [henryouly/filerun-alpine](https://hub.docker.com/r/henryouly/filerun-alpine) | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/henryouly/filerun-alpine/arm)|
-| [henryouly/filerun-alpine-php-fpm](https://hub.docker.com/r/henryouly/filerun-alpine-php-fpm) | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/henryouly/filerun-alpine-php-fpm/arm)|
+| [henryouly/filerun-alpine](https://hub.docker.com/r/henryouly/filerun-alpine) | ![Docker Image Size](https://img.shields.io/docker/image-size/henryouly/filerun-alpine/latest)|
+| [henryouly/filerun-alpine-php-fpm](https://hub.docker.com/r/henryouly/filerun-alpine-php-fpm) | ![Docker Image Size](https://img.shields.io/docker/image-size/henryouly/filerun-alpine-php-fpm/latest)|
 
 Total on-disk size is below 100 MB.
 
