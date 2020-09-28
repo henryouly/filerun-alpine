@@ -33,3 +33,13 @@ jobs:
           push: true
           tags: |
             henryouly/filerun-alpine:latest
+      -
+        name: Build and push PHP
+        uses: docker/build-push-action@v2
+        with:
+          context: php-fpm
+          file: php-fpm/Dockerfile
+          platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
+          push: true
+          tags: |
+            henryouly/filerun-alpine-php-fpm:latest            
