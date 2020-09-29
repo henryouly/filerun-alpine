@@ -41,6 +41,14 @@ Total on-disk size is below 100 MB.
 
 I also used https://github.com/jbergstroem/mariadb-alpine in the `docker-compose.yaml` file due to the tiny footprint and fast startup speed.
 
+Areas to improve (open for pull requests)
+----
+* [henryouly/filerun-alpine-php-fpm](https://hub.docker.com/r/henryouly/filerun-alpine-php-fpm) is ARM only despite it is shown as a multi-arch docker image, due how ionCube loader is extracted in [Dockerfile](https://github.com/henryouly/filerun-alpine/blob/master/php-fpm/Dockerfile).
+* Support PHP 7.4. According to [FileRun docs](https://docs.filerun.com/php7) I attempted to update Dockerfile to use latest PHP image and ionCube. It was unsuccessful to decrypt the PHP files.
+* More Dockerfile gimmicks. I have followed best practices to keep the image small and performant on ARM devices.
+
+Acknowledge
+----
 Thanks to these projects. My project has been greatly benefited based on their work:
 * https://github.com/filerun/docker-arm32v7
 * https://github.com/TrafeX/docker-php-nginx
