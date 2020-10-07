@@ -26,6 +26,7 @@ RUN curl -sSL -o /srv/filerun.zip https://filerun.com/download-latest-php73
 COPY autoconfig.php /srv/
 COPY entrypoint.sh /docker-entrypoint.d/
 COPY filerun.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Configure a healthcheck to validate that everything is up&running
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1/fpm-ping
